@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,maximum-scale=1, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" type="text/css" href="../lib/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<title></title>
+</head>
+<style type="text/css">
+	.content {
+    margin: 0 .133333rem .533333rem .133333rem;
+    padding: .133333rem .213333rem;
+  }
+  .menu_1_7_footer {
+    position: relative;
+    margin-top: .8rem;
+    background: #FFF;
+    margin-bottom: .533333rem;
+  }
+  .menu_1_7_footer>img {
+    display: block;
+    width: 100%;
+    opacity: 0.5;
+  }
+  .menu_1_7_footer>p {
+    position: absolute;
+    color: #FFF;
+    font-size: .373333rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    justify-content: center;
+  }
+  .menu_1_7_footer::after,.menu_1_7_footer::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: .48rem;
+    width: 70%;
+    transform: skewX(-31deg);
+    background-color: #CF3C25;
+    z-index: 1;
+  }
+  .menu_1_7_footer::after{
+    left: .16rem;
+    bottom: -.16rem;
+  }
+  .menu_1_7_footer::before{
+    top: -.16rem;
+    right: .16rem;
+  }
+</style>
+<body>
+	<div class="container">
+    <div class="hander left_top_logo">
+      <img src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_left-top-logo.png" onClick="javascript:return false">
+      <p id="handerTitle"></p>
+    </div>
+    <div class="content border_dashed_dddd">
+      <div class="txt">
+        <p>由汇丰全程赞助的中国国家青少年高尔夫球队是中国唯一的国家级青少年高尔夫球队，球队由中国高尔夫球协会简称（“中高协”）组建、训练并负责日常管理，同时接受国家体育总局小球运动管理中心的领导。中国国家青少年高尔夫球队是中国最高水平的青少年运动员的集体，是国家队的后备梯队。而汇丰为“中国国家青少年高尔夫球队”的成立和建设做出巨大的贡献。</p> 
+        <p>中国高尔夫球协会综合考量青少年选手的比赛成绩（汇丰全国青少年高尔夫冠军赛、汇丰中国青少年高尔夫球公开赛、以及其他全国青少年比赛中的表现）、技术水平、赛场礼仪以及发展潜力等各方面因素，在国内广大青少年高尔夫选手中遴选出24名优秀选手组建了中国国家青少年高尔夫球队。入选选手的年龄均在12至17周岁之间。</p>
+        <p>组建这支由汇丰全程赞助的中国国家青少年高尔夫球队是“中高协-汇丰中国青少年高尔夫发展计划”的重要内容之一。该计划为在我国青少年中普及和开展高尔夫球运动发挥了巨大作用，不仅使更多的青少年开始参与高尔夫球运动，也发现和培养了许多优秀的青少年高尔夫球选手。</p>
+        <p>鉴于中国国家青少年高尔夫球队成员全部为18周岁以下选手，为保证选手们正常的在校学习时间，球队的主要集训时间在寒暑假，以集中而有针对性的训练为主，旨在分析、了解选手在体能、技术、战术及心理等方面存在的薄弱环节，并指导选手改进和提高。除此之外，中高协和汇丰还将联手为中国国家青少年高尔夫球队提供代表中国参加国内外重要青少年高尔夫赛事和职业赛事的机会。例如，汇丰冠军赛、汇丰女子冠军赛、LPGA、观摩学习英国公开赛、跨太平洋青少年对抗赛和英国青少年公开赛等。在2016年的英国青少年公开赛中，中国国家青少年高尔夫球队的青少年球员，同时也是在中高协-汇丰中国青少年高尔夫发展计划中成长起来的球员冀怡帆获得了男女总排名季军，女子排名亚军，创下了中国球员参加该项赛事的最佳成绩。2017年，国青队在荷兰青少年公开赛中首次捧得女子团体冠军，创造了历史。通过参与这些重大赛事，队员们将检验训练成果，提高竞技水平和适应能力，展示中国青少年运动员的良好精神风貌。</p>
+      </div>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+    <div class="menu_1_7_footer">
+      <img onClick="javascript:return false" src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_1_7_banner.png">
+      <p>国家青年队合影</p>
+    </div>
+  </div>
+	<script src="../lib/js/jquery.min.js"></script>
+  <script src="../lib/js/lib-flexible.js"></script>
+  <script src="../js/common.js"></script>
+	<script type="text/javascript">
+		$().ready(function () {
+			document.title = '汇丰青少年' // set web title
+      $('#handerTitle').text(getQueryString('title')) // getQueryString('title')
+		})
+	</script>
+</body>
+
+</html>

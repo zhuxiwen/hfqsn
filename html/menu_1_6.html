@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,maximum-scale=1, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" type="text/css" href="../lib/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<title></title>
+</head>
+<style type="text/css">
+	.content {
+    margin: 0 .133333rem .533333rem .133333rem;
+    padding: .4rem;
+  }
+  .banner_img_box{
+    margin-top: .266667rem;
+    margin-bottom: .72rem;
+    width: 94%;
+    margin-left: 3%;
+  }
+</style>
+<body>
+	<div class="container">
+    <div class="hander left_top_logo">
+      <img src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_left-top-logo.png" onClick="javascript:return false">
+      <p id="handerTitle"></p>
+    </div>
+    <div class="red_shadow img_right banner_img_box">
+      <img onClick="javascript:return false" src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_1_6_banner.png">
+    </div>
+    <div class="content border_dashed_dddd">
+      <div class="txt">
+        <p>2018年，中高协-汇丰中国青少年高尔夫发展计划将为优秀的小球员们提供2018年IMG学院青少年世界高尔夫冠军赛 (IMG Academy Junior World Championships) 和佛罗里达挑战赛（Florida challenge）两场赛事的外卡。</p>
+        <p>参加资格将通过汇丰全国青少年高尔夫冠军赛分站赛以及总决赛成绩进行选拔。获得2017汇丰全国青少年高尔夫冠军赛总决赛和2018汇丰全国青少年高尔夫冠军赛分站赛前三站最佳成绩的男女子A/B/C/D/E组十名球员将获得IMG学院青少年世界高尔夫冠军赛外卡。获得2018汇丰全国青少年高尔夫冠军赛总决赛冠军的A/B/C组男女子冠军的六名球员将获得佛罗里达挑战赛外卡。</p>
+      </div>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+  </div>
+	<script src="../lib/js/jquery.min.js"></script>
+  <script src="../lib/js/lib-flexible.js"></script>
+  <script src="../js/common.js"></script>
+	<script type="text/javascript">
+		$().ready(function () {
+			document.title = '汇丰青少年' // set web title
+      $('#handerTitle').text(getQueryString('title')) // getQueryString('title')
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,maximum-scale=1, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" type="text/css" href="../lib/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<title></title>
+</head>
+<style type="text/css">
+	.content {
+    margin: 0 .133333rem .533333rem .133333rem;
+    padding: .133333rem .213333rem;
+  }
+  .circle_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .double_circle {
+    height: 4.266667rem;
+    width: 4.266667rem;
+    margin-top: .4rem;
+    margin-bottom: .4rem;
+  }
+  .jy_card {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-bottom: .4rem;
+  }
+  .jy_card::after,.jy_card::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: .24rem;
+    width: 36%;
+    transform: skewX(-31deg);
+    background-color: #CF3C25;
+    z-index: 1;
+  }
+  .jy_card::after{
+    top: -.32rem;
+    left: 0;
+  }
+  .jy_card::before{
+    right: 0;
+    bottom: -.106667rem;
+  }
+  .jy_card>h2 {
+    font-size: .586667rem;
+  }
+  .jy_card>p {
+    font-size: .453333rem;
+    margin-top: .506667rem;
+    margin-bottom: .426667rem;
+  }
+</style>
+<body>
+	<div class="container" id="container">
+    <div class="hander left_top_logo">
+      <img src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_left-top-logo.png" onClick="javascript:return false">
+      <p id="handerTitle"></p>
+    </div>
+  </div>
+	<script src="../lib/js/jquery.min.js"></script>
+  <script src="../lib/js/lib-flexible.js"></script>
+  <script src="../js/common.js"></script>
+	<script type="text/javascript">
+		$().ready(function () {
+			document.title = '汇丰青少年' // set web title
+      $('#handerTitle').text(getQueryString('title')) // getQueryString('title')
+      const initData = {
+        dataList: [
+        {
+            headImage: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_2_4_1_banner.png',
+            name: '梁文冲',
+            description: '对汇丰青少年球员的寄语',
+            content: '青少年高尔夫代表着中国高尔夫的未来。我希望青少年球员们都能够脚踏实地，在高尔夫球道路上坚持不懈。也希望青少年高尔夫球手的健康发展可以得到更多的关注和支持。汇丰青少年已历经十一年，培养出了许多优秀的青少年球手。祝愿汇丰青少年越办越好，让我们共同为中国高尔夫球事业而努力。'
+          },
+          {
+            headImage: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_2_4_2_banner.png',
+            name: '冯珊珊',
+            description: '对汇丰青少年球员的寄语',
+            content: '汇丰青少年在十一年来为中国青少年高尔夫发展做出了卓越的贡献。这个平台给了小球员们展示自己的机会，从这里开始，很多青少年有机会学习高尔夫，参加比赛，甚至成为专业的高尔夫球手，拥有了不一样的人生。希望有更多的孩子可以加入进来，和我们一起享受高尔夫运动的乐趣。让我们一起努力，为国争光。中国高尔夫的未来需要我们每个人的奋斗。'
+          }
+        ]
+      }
+      let listSubDom = ''
+      let createListSubDom = function(data) {
+        return `<div class="circle_box">
+                  <div class="double_circle">
+                    <img onClick="javascript:return false" src="${data.headImage}">
+                  </div>
+                  <div class="jy_card">
+                    <h2>${data.name}</h2>
+                    <p>${data.description}</p>
+                  </div>
+                </div>
+                <div class="content border_dashed_dddd">
+                  <div class="txt">
+                      <p>${data.content}</p>
+                    </div>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </div>`
+      }
+      // 循环添加DOM
+			for (let i = 0; i < initData.dataList.length; i++) {
+				listSubDom += createListSubDom(initData.dataList[i])
+      }
+			// 渲染DOM
+			$('#container').append(listSubDom)
+		})
+	</script>
+</body>
+
+</html>

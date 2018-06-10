@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,maximum-scale=1, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" type="text/css" href="../lib/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<title></title>
+</head>
+<style type="text/css">
+	.content {
+    margin: 0 .133333rem .533333rem .133333rem;
+    padding: .133333rem;
+  }
+  div#content {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  div#content>div {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: .96rem;
+    margin-top: .48rem;
+  }
+  div#content>div>img {
+    width: 40%;
+  }
+  div#content>div p {
+      font-size: .32rem;
+      margin-top: .426667rem;
+  }
+</style>
+<body>
+	<div class="container">
+    <div class="hander left_top_logo">
+      <img src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_left-top-logo.png" onClick="javascript:return false">
+      <p id="handerTitle"></p>
+    </div>
+    <div class="content" id="content">
+        <!-- <div>
+          <img src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_1.png">
+          <p>广州南沙高尔夫球会</p>
+        </div> -->
+    </div>
+  </div>
+	<script src="../lib/js/jquery.min.js"></script>
+  <script src="../lib/js/lib-flexible.js"></script>
+  <script src="../js/common.js"></script>
+	<script type="text/javascript">
+		$().ready(function () {
+			document.title = '汇丰青少年' // set web title
+      $('#handerTitle').text('2017球场介绍') // getQueryString('title')
+      const initData = {
+        dataList: [
+          {
+            id: 1,
+            url: './menu_2_4_3_details.html',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_1.png',
+            name: '广州南沙高尔夫球会'
+          },
+          {
+            id: 2,
+            url: './menu_2_4_3_details.html',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_2.png',
+            name: '西丽高尔夫球俱乐部'
+          },
+          {
+            id: 3,
+            url: './menu_2_4_3_details.html',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_3.png',
+            name: '通盈·雁栖湖高尔夫球俱乐部'
+          },
+          {
+            id: 4,
+            url: './menu_2_4_3_details.html',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_4.png',
+            name: '金沙湖国际高尔夫球会'
+          },
+          {
+            id: 5,
+            url: './menu_2_4_3_details.html',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_5.png',
+            name: '鉴湖高尔夫球会'
+          },
+          {
+            id: 6,
+            url: './menu_2_4_3_details.html',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_6.png',
+            name: '广州风神高尔夫球会'
+          },
+          {
+            id: 7,
+            url: './menu_2_4_3_details.html',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_7.png',
+            name: '上海林克司乡村俱乐部'
+          },
+          {
+            id: 8,
+            url: './menu_2_4_3_details.html',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_8.png',
+            name: '莫干山观云高尔夫球会'
+          }
+        ]
+      }
+      let listSubDom = ''
+      let createListSubDom = function(data) {
+        return `<div onClick="javascript:location.href='${data.url}?id=${data.id}'">
+                  <img src="${data.imageUrl}">
+                  <p>${data.name}</p>
+                </div>`
+      }
+      // 循环添加DOM
+			for (let i = 0; i < initData.dataList.length; i++) {
+				listSubDom += createListSubDom(initData.dataList[i])
+      }
+			// 渲染DOM
+			$('#content').append(listSubDom)
+    })
+	</script>
+</body>
+
+</html>

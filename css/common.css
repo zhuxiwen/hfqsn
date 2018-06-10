@@ -1,0 +1,156 @@
+.hander {
+  height: 1.386667rem;
+  background: #FFF;
+}
+/* 左上角的Logo和文字 */
+.left_top_logo {
+  display: flex;
+  align-items: center;
+}
+.left_top_logo>img {
+  width: 1.333333rem;
+  display: block;
+  padding-left: .266667rem;
+}
+p#handerTitle {
+  color: #B03721;
+  font-size: .506667rem;
+  position: relative;
+  padding-left: .346667rem;
+  margin-left: .32rem;
+}
+p#handerTitle:before {
+  content: '';
+  width: .08rem;
+  background-color: #B4432D;
+  display: block;
+  position: absolute;
+  top: -.08rem;
+  left: 0;
+  height: .613333rem;
+}
+/* 文章 虚线边框加四个点 */
+.border_dashed_dddd {
+  border: .026667rem #000 dashed;
+  border-radius: .213333rem;
+  position: relative;
+}
+.txt {
+  color: #3a3a3a;
+  font-size: .346667rem;
+  line-height: .746667rem;
+}
+.txt>p{
+  text-indent: .613333rem;
+  text-align: justify;
+}
+.border_dashed_dddd>i {
+  display: block;
+  height: .16rem;
+  width: .16rem;
+  background-color: #93331D;
+  border-radius: 100%;
+  position: absolute;
+  border: .133333rem solid #FFF;
+}
+.border_dashed_dddd>i:nth-of-type(1) {
+  top: -.16rem;
+  left: -.16rem;
+}
+.border_dashed_dddd>i:nth-of-type(2) {
+  top: -.16rem;
+  right: -.16rem;
+}
+.border_dashed_dddd>i:nth-of-type(3) {
+  bottom: -.16rem;
+  left: -.16rem;
+}
+.border_dashed_dddd>i:nth-of-type(4) {
+  bottom: -.16rem;
+  right: -.16rem;
+}
+/* 头像或名字的那个双圆重叠的CSS */
+.double_circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.6rem;
+  width: 1.6rem;
+  border-radius: 100%;
+  position: relative;
+  color: #FFF;
+}
+.double_circle:before {
+  content: '';
+  background-color: #dc6543;
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 100%;
+  top: 0;
+  left: 0;
+}
+.double_circle:after {
+  content: '';
+  background-color: rgba(216, 75, 54,.7);
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 100%;
+  top: -.106667rem;
+  left: -.026667rem;
+}
+.double_circle>img {
+  height: 97%;
+  width: 96%;
+  margin-right: 3.5%;
+  margin-bottom: 3%;
+  display: block;
+  border-radius: 100%;
+  position: relative;
+  z-index: 1;
+}
+/* 一个照片下的红色阴影 */
+.red_shadow {
+  background-color: #CF3C25;
+  width: 100%;
+  padding-bottom: .293333rem;
+  padding-right: .266667rem;
+  box-sizing: border-box;
+  position: relative;
+}
+.red_shadow:after {
+  content: '';
+  position: absolute;
+  height: .4rem;
+  width: .4rem;
+  right: 0;
+  top: -.026667rem;
+  background: #FFF;
+}
+.red_shadow>img {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.red_shadow.img_right {
+  padding-left: .266667rem;
+  padding-right: 0;
+}
+.red_shadow.img_right:after{
+  right: inherit;
+  left: -.026667rem;
+}
+/* 名片 */
+.b_card {
+  padding: .586667rem;
+  padding-bottom: 0;
+}
+.b_card>p {
+  font-size: .32rem;
+  line-height: .453333rem;
+  margin-top: .32rem;
+}

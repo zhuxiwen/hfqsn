@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,maximum-scale=1, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" type="text/css" href="../lib/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<title></title>
+</head>
+<style type="text/css">
+	.content {
+    margin: 0 .133333rem .533333rem .133333rem;
+    padding: .133333rem .213333rem;
+  }
+  .circle_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .double_circle {
+    height: 4.266667rem;
+    width: 4.266667rem;
+    margin-top: .4rem;
+    margin-bottom: .4rem;
+  }
+  .jy_card {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-bottom: .4rem;
+  }
+  .jy_card::after,.jy_card::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: .24rem;
+    width: 36%;
+    transform: skewX(-31deg);
+    background-color: #CF3C25;
+    z-index: 1;
+  }
+  .jy_card::after{
+    top: -.32rem;
+    left: 0;
+  }
+  .jy_card::before{
+    right: 0;
+    bottom: -.106667rem;
+  }
+  .jy_card>h2 {
+    font-size: .586667rem;
+  }
+  .jy_card>p {
+    font-size: .453333rem;
+    margin-top: .506667rem;
+    margin-bottom: .426667rem;
+  }
+</style>
+<body>
+	<div class="container" id="container">
+    <div class="hander left_top_logo">
+      <img src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_left-top-logo.png" onClick="javascript:return false">
+      <p id="handerTitle"></p>
+    </div>
+  </div>
+	<script src="../lib/js/jquery.min.js"></script>
+  <script src="../lib/js/lib-flexible.js"></script>
+  <script src="../js/common.js"></script>
+	<script type="text/javascript">
+		$().ready(function () {
+			document.title = '汇丰青少年' // set web title
+      $('#handerTitle').text('校友寄语') // getQueryString('title')
+      const initData = {
+        dataList: [
+        {
+            headImage: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_2_3_1_banner.png',
+            name: '窦泽成',
+            description: '对汇丰青少年球员的寄语',
+            content: '中高协-汇丰中国青少年高尔夫发展计划启动于2007年。而我也是从那一年起，成为了汇丰青少年的第一批球员。在汇丰青少年征战的六年里，我不仅经历了许多重要的比赛，也培养了扎实的高尔夫素养。感谢多年来汇丰青少年对球手们的培养，希望汇丰青少年在未来的日子里，可以越办越好！'
+          },
+          {
+            headImage: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_2_3_2_banner.png',
+            name: '刘钰',
+            description: '对汇丰青少年球员的寄语',
+            content: '我非常开心能够看到大家在汇丰青少年的赛场上不断取得进步。从2007年我参加汇丰青少年第一场比赛起，不知不觉间，汇丰青少年已经到第十二年了，我自己参加比赛时的场景还历历在目。正是从汇丰青少年的大家庭中，我一步步踏踏实实走到今天，并且更加坚定地迈向自己儿时的梦想。期待你们也能在汇丰青少年里快乐前行，走向未来！'
+          },
+          {
+            headImage: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_2_3_3_banner.png',
+            name: '林钰鑫',
+            description: '对汇丰青少年球员的寄语',
+            content: '在我的高尔夫生涯中，参加的第一场高尔夫比赛就是汇丰青少年，当时我八岁。在汇丰青少年的比赛中征战，让我更加热爱高尔夫运动，也让我结识到很多好朋友。我非常开心在这个赛场得到了很多锻炼和成长，也希望更多的小选手在这里取得收获。祝汇丰青少年越办越好！'
+          }
+        ]
+      }
+      let listSubDom = ''
+      let createListSubDom = function(data) {
+        return `<div class="circle_box">
+                  <div class="double_circle">
+                    <img onClick="javascript:return false" src="${data.headImage}">
+                  </div>
+                  <div class="jy_card">
+                    <h2>${data.name}</h2>
+                    <p>${data.description}</p>
+                  </div>
+                </div>
+                <div class="content border_dashed_dddd">
+                  <div class="txt">
+                      <p>${data.content}</p>
+                    </div>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </div>`
+      }
+      // 循环添加DOM
+			for (let i = 0; i < initData.dataList.length; i++) {
+				listSubDom += createListSubDom(initData.dataList[i])
+      }
+			// 渲染DOM
+			$('#container').append(listSubDom)
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,maximum-scale=1, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" type="text/css" href="../lib/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<title></title>
+</head>
+<style type="text/css">
+  .hander {
+    margin-bottom: .8rem;
+  }
+  .content {
+    width: 88%;
+    margin: 0 auto;
+    margin-bottom: 1.066667rem;
+  }
+  .items {
+    display: flex;
+    color: #B03721;
+    font-size: .293333rem;
+    margin-bottom: .133333rem;
+  }
+  .items>div {
+    margin-left: .986667rem;
+    position: relative;
+  }
+  .items img {
+    border-radius: 100%;
+    display: block;
+    width: 2.666667rem;
+    height: 2.666667rem;
+    border: #B03721 solid .08rem;
+    object-fit: cover;
+  }
+  .items a {
+    color: indianred;
+    text-decoration: none;
+    line-height: .533333rem;
+  }
+  .items p {
+    font-size: .373333rem;
+    position: absolute;
+    left: -1.146667rem;
+    top: .133333rem;
+  }
+  .items:nth-child(even) {
+    justify-content: flex-end;
+  }
+</style>
+<body>
+	<div class="container">
+    <div class="hander left_top_logo">
+      <img src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_left-top-logo.png" onClick="javascript:return false">
+      <p id="handerTitle"></p>
+    </div>
+    <div class="content" id="content">
+    </div>
+  </div>
+	<script src="../lib/js/jquery.min.js"></script>
+	<script src="../lib/js/lib-flexible.js"></script>
+	<script type="text/javascript">
+		$().ready(function () {
+			document.title = '汇丰青少年' // set web title
+      $('#handerTitle').text('2017赛季回顾') // getQueryString('title')
+      const initData = {
+        dataList: [
+        {
+            id: 1,
+            url: './menu_4_1_details.html',
+            title: '公开赛',
+            description: '点击图片查看详情',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_1.png',
+          },
+          {
+            id: 2,
+            url: './menu_4_1_details.html',
+            title: '广州站',
+            description: '点击图片查看详情',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_2.png',
+          },
+          {
+            id: 3,
+            url: './menu_4_1_details.html',
+            title: '郑州站',
+            description: '点击图片查看详情',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_3.png',
+          },
+          {
+            id: 4,
+            url: './menu_4_1_details.html',
+            title: '杭州站',
+            description: '点击图片查看详情',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_4.png',
+          },{
+            id: 5,
+            url: './menu_4_1_details.html',
+            title: '北京站',
+            description: '点击图片查看详情',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_5.png',
+          },
+          {
+            id: 6,
+            url: './menu_4_1_details.html',
+            title: '深圳站',
+            description: '点击图片查看详情',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_6.png',
+          },
+          {
+            id: 7,
+            url: './menu_4_1_details.html',
+            title: '绍兴站',
+            description: '点击图片查看详情',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_7.png',
+          },
+          {
+            id: 8,
+            url: './menu_4_1_details.html',
+            title: '总决赛',
+            description: '点击图片查看详情',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_8.png',
+          }
+        ]
+      }
+      let listSubDom = ''
+      let createListSubDom = function(data) {
+        return `<div class="items">
+                  <div>
+                    <p>${data.title}</p>
+                    <img onClick="javascript:location.href='${data.url + '?id=' + data.id}'" src="${data.imageUrl}">
+                    <a href="${data.url + '?id=' + data.id}">[${data.description}]</a>
+                  </div>
+                </div>`
+      }
+      // 循环添加DOM
+			for (let i = 0; i < initData.dataList.length; i++) {
+				listSubDom += createListSubDom(initData.dataList[i])
+      }
+			// 渲染DOM
+			$('#content').html(listSubDom)
+		})
+	</script>
+</body>
+
+</html>

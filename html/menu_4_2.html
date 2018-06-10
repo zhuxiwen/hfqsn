@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,maximum-scale=1, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" type="text/css" href="../lib/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<title></title>
+</head>
+<style type="text/css">
+	.content {
+    margin: 0 .133333rem .533333rem .133333rem;
+    padding: .133333rem;
+  }
+  .border-red-skewX {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: skewX(-22deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #CF3C25;
+  }
+  .border-red-skewX::after {
+    content: '';
+    position: absolute;
+    border: solid .026667rem #d03b25;
+    left: -.08rem;
+    right: -.026667rem;
+    bottom: .08rem;
+    top: -.08rem;
+  }
+  .border-red-skewX::before {
+    content: '';
+    position: absolute;
+    bottom: .106667rem;
+    width: 100%;
+    height: .013333rem;
+    background-color: #FFF;
+  }
+  .items {
+    position: relative;
+    display: block;
+    font-size: .266667rem;
+    line-height: .533333rem;
+    text-indent: .666667rem;
+    width: 100%;
+    margin-top: 1.253333rem;
+  }
+  .img_content {
+    transform: skewX(-22deg);
+    overflow: hidden;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.013333rem;
+    box-sizing: content-box;
+    margin-right: .48rem;
+    position: relative;
+    padding-bottom: .08rem;
+    padding-right: .08rem;
+    max-width: 4.533333rem;
+    margin-top: -.533333rem;
+    border-left: .346667rem solid transparent;
+  }
+  .img_content>img {
+    display: block;
+    object-fit: contain;
+    transform: skewX(22deg);
+    width: 130%;
+  }
+  .img_content>div {
+    background: #cf3c25;
+    position: absolute;
+    height: 70%;
+    width: 70%;
+    z-index: -1;
+    bottom: 0;
+    right: 0;
+  }
+  .img_content::after {
+    content: '';
+    height: 70%;
+    width: .08rem;
+    background-color: #cf3c25;
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+  }
+  .img_content::before {
+    content: '';
+    width: 70%;
+    height: .08rem;
+    background-color: #cf3c25;
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+  }
+  .hand {
+    position: relative;
+    height: .773333rem;
+    width: 65%;
+    margin-bottom: .16rem;
+    margin-left: .186667rem;
+  }
+  .hand>p {
+    color: #FFF;
+    position: relative;
+    height: 100%;
+    text-align: left;
+    align-items: center;
+    font-size: .346667rem;
+    display: inherit;
+    line-height: .773333rem;
+  }
+  .hand>h1 {
+    position: absolute;
+    top: -.533333rem;
+    font-size: .4rem;
+    text-indent: .133333rem;
+    color: #CF3C25;
+    word-break: keep-all;
+  }
+.items:nth-of-type(even) .img_content {
+  float: left;
+  margin-right: inherit;
+  margin-left: .533333rem;
+  border-left: 0;
+  border-right: .346667rem solid transparent;
+  
+}
+.items:nth-of-type(even) .img_content>div {
+  left: 0;
+}
+.items:nth-of-type(even) .img_content::after {
+  left: 0;
+}
+.items:nth-of-type(even) .img_content::before {
+  left: 0;
+}
+.items:nth-of-type(even) .hand {
+    left: 32%;
+}
+.items:nth-of-type(even) .hand>p {
+    text-align: right;
+    display: inherit;
+    line-height: .773333rem;
+}
+.items:nth-of-type(even) .hand {
+    left: 32%;
+}
+.items:nth-of-type(even) .border-red-skewX::after{
+  left: 0;
+  right: -.08rem;
+}
+</style>
+<body>
+	<div class="container">
+    <div class="hander left_top_logo">
+      <img src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_left-top-logo.png" onClick="javascript:return false">
+      <p id="handerTitle"></p>
+    </div>
+    <div class="content" id="content">
+
+      <!-- <div class="items">
+        <div class="hand">
+          <div class="border-red-skewX"></div> 
+          <p>丁文一（男子C组）</p>
+          <h1>2017VMVMJ 小球员</h1>
+        </div>
+        <div class="img_content">
+          <img src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_4_2_1.jpg?id=0&from=export">
+          <div></div>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中高协-汇丰中国青少年高尔夫发展计划————梅塞德斯-奔驰城市训练营由汇丰全国青少年高尔夫夏令营升级而来，2018年共设有广州，郑州，杭州，成都四站，面向8-12岁青少年进行高尔夫普及课程。城市训练营特别邀请来自泰勒梅卓越馆的专业教练，并将以前为期一天的夏令营延长至两天，从多个纬度寓教于乐。
+      </div> -->
+      
+    </div>
+  </div>
+	<script src="../lib/js/jquery.min.js"></script>
+  <script src="../lib/js/lib-flexible.js"></script>
+  <script src="../js/common.js"></script>
+	<script type="text/javascript">
+		$().ready(function () {
+			document.title = '汇丰青少年' // set web title
+      $('#handerTitle').text(getQueryString('title')) // getQueryString('title')
+      const initData = {
+        dataList: [
+          {
+            prize: '2017年度MVP（最有价值球员）：',
+            name: '丁文一（男子C组）',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_4_2_1.jpg',
+            content: '获奖理由：丁文一在2017年的杭州站、北京站连拿两站冠军，并且连续两站当选男子MVP。在北京站，他打出63杆的全场最低杆，同时也是2017汇丰青少年全年的单场最低杆。他无疑是本年度MVP的最佳人选。'
+          },
+          {
+            prize: 'IMG最具潜质奖：',
+            name: '梅之译（女子A组）',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_4_2_2.jpg',
+            content: '获奖理由：梅之译在2017年赛事中连续获得深圳站、比洞赛的冠军，潜力无限，赢得了大家对她的褒奖。所以将IMG 最具潜质奖授予她，期待她更好的表现，为青少年球员树立榜样。'
+          },
+          {
+            prize: '中高协年度大奖：',
+            name: '关可昕（女子D组）',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_4_2_3.jpg',
+            content: '获奖理由：关可昕连续参加了郑州、杭州、北京三站比赛，夺取三连冠，在强手如林的女子D组中展现出了非常高的竞赛水平。关可昕更以她扎实稳健的球风，彬彬有礼的言行，赢得大家对她的褒奖。总决赛是她升组之后的第一场汇丰青少年比赛，希望她之后的赛事中获得更大的进步和成就！'
+          },
+          {
+            prize: '2017年度MVP（最有价值球员）',
+            name: '王亿文 （男子D组）',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_4_2_4.jpg',
+            content: '获奖理由：王亿文曾在2016年四次参加比赛，从第一站的第12名，到最后一站的第5名。今年，王亿文再次参加汇丰青少年，并在杭州站、深圳站夺冠，北京站、比洞赛获得亚军。如此大的进步必定和他的勤奋努力不可分割，愿他继续坚持，奔向心中的那个最高荣誉。'
+          },
+          {
+            prize: '5100雄鹰奖：',
+            name: '刘雨琦（男子B组）',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_4_2_5.jpg',
+            content: '获奖理由：刘雨琦在2017年赛事中获得杭州站、北京站冠军，并且69杆的平均杆数位于所有球员中最低。这一年他像雄鹰一般在高尔夫赛场上展翅高飞，不断的超越自我。期待他在下一年中有更精彩的表现！'
+          },
+          {
+            prize: 'R&A最佳礼仪奖：',
+            name: '张章（男子D组）',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_4_2_6.jpg',
+            content: '获奖理由：无论在赛场上还是场下，赛事组委会和裁判们都对这个彬彬有礼的男生印象深刻。他以自己礼貌友好，尊重他人的言行良好的诠释出高尔夫礼仪。'
+          },
+          {
+            prize: 'R&A最佳规则奖：',
+            name: '邓皓月（女子E组）',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_4_2_7.jpg',
+            content: '获奖理由：邓皓月在比赛中严格要求自己，对规则有着深入理解。同时用实际的成绩说明只有严格遵循高尔夫规则才是在高尔夫运动这条道路上走的更高更远的法宝。'
+          },
+          {
+            prize: '单轮18洞最多小鸟：',
+            name: '丁文一（男子C组）',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_4_2_8.jpg',
+            content: '获奖理由：丁文一在2017年汇丰青少年北京站第一轮的比赛中打出7鸟1鹰无伯忌，以63杆完赛，成为今年单轮小鸟数最多的选手。'
+          },
+          {
+            prize: '单轮9洞最多小鸟：',
+            name: '叶震（男子E组）',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_4_2_9.jpg',
+            content: '获奖理由：叶震在2017年汇丰青少年深圳站第一轮比赛中9洞比赛抓到4只小鸟，成为今年单轮9洞小鸟数最多的选手。'
+          }
+          
+        ]
+      }
+      let listSubDom = ''
+      let createListSubDom = function(data) {
+        return `<div class="items">
+                  <div class="hand">
+                    <div class="border-red-skewX"></div> 
+                    <p>${data.name}</p>
+                    <h1>${data.prize}</h1>
+                  </div>
+                  <div class="img_content">
+                    <img onClick="javascript:return false" src="${data.imageUrl}">
+                    <div></div>
+                  </div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${data.content}
+                </div>`
+      }
+      // 循环添加DOM
+			for (let i = 0; i < initData.dataList.length; i++) {
+				listSubDom += createListSubDom(initData.dataList[i])
+      }
+			// 渲染DOM
+			$('#content').append(listSubDom)
+		})
+	</script>
+</body>
+
+</html>

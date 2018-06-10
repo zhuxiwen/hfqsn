@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,maximum-scale=1, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" type="text/css" href="../lib/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<title></title>
+</head>
+<style type="text/css">
+	.content {
+    margin: 0 .133333rem .533333rem .133333rem;
+    padding: .133333rem;
+  }
+  div#content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  img.bg {
+    width: 90%;
+    display: block;
+  }
+  img.logo {
+    display: block;
+    width: 2.666667rem;
+    margin: .266667rem 0 .266667rem;
+  }
+  div#content>p {
+    font-size: .346667rem;
+    line-height: .746667rem;
+    text-align: justify;
+    text-indent: .746667rem;
+    width: 100%;
+  }
+</style>
+<body>
+	<div class="container">
+    <div class="hander left_top_logo">
+      <img src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_left-top-logo.png" onClick="javascript:return false">
+      <p id="handerTitle"></p>
+    </div>
+    <div class="content" id="content">
+    </div>
+  </div>
+	<script src="../lib/js/jquery.min.js"></script>
+  <script src="../lib/js/lib-flexible.js"></script>
+  <script src="../js/common.js"></script>
+	<script type="text/javascript">
+		$().ready(function () {
+			document.title = '汇丰青少年' // set web title
+      const initData = {
+        dataList: [
+          {
+            id: 1,
+            logo: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_1.png',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_1_1.png',
+            name: '广州南沙高尔夫球会',
+            content: [
+              '广州南沙高尔夫球会----地位超卓、众所瞩目的两个标准18洞高尔夫球场。球会地处穗、港、澳三角的中心，与广州、佛山、中山、顺德及深圳为邻，交通十分便利。距离球会仅有8分钟车程的南沙港，每日有4班双体船来回香港和南沙，全程只需75分钟，球会提供会所至南沙港免费穿梭巴士服务。拥有如此得天独厚的优越地理位置，广州南沙高尔夫球会怎能不成为高球爱好者的宠儿？',
+              '由殿堂级大师John Jacobs设计的两个十八洞标准球场，给高球爱好者带来无限挑战。黄山鲁场由巧妙水池迈至广阔山岭，球场依山而建，球道多数起伏不平，18洞精彩布局，尽显球场气势。芦湾场球道穿插于山谷与湖泊之中，迂回曲折，18洞别具洞天。黄山鲁场山势暗藏玄机，芦湾场景色优美如画，眺青山、瞰碧水，让您畅享挥杆之乐，感受湖景山峦之势和自然环境之趣。9洞灯光球场，使白天忙碌的高球爱好者将挥杆之乐延续至曼妙的夜晚。',
+              '设备完善的大型练习场为您提供温馨体贴的高尔夫球服务，夜间设有照明系统，无论昼夜，嘉宾均可于三十多个练习打位、沙坑及果岭等短杆练习区练习。',
+              '从1997年营业至今，球会接待了大量的业余及职业比赛，其中较有影响力的有爱立信中国职业高尔夫球挑战杯、中信朝向中国业余高尔夫球巡回赛、汇丰中国青少年高尔夫冠军赛及公开赛、连续多届中国高校校友“翰林杯”高尔夫精英赛和VOLVO中国公开赛国际国内站资格赛等。',
+              '球会提供免费场地给广州市青少年高尔夫球队作为培训基地，为促进中国高尔夫球运动的发展贡献一份力量。',
+              '&nbsp;',
+              '&nbsp;',
+              '电话：（8620）8468-1888',
+              '传  真：（8620）8468-0728',
+              '地  址：广州市南沙区下湾西街65号',
+              '邮  编：511457',
+              '网  址：<a href="http://www.nanshagolfclub.com">www.nanshagolfclub.com</a>'
+            ]
+          },
+          {
+            id: 2,
+            logo: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_2.png',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_2_1.png',
+            name: '西丽高尔夫球俱乐部',
+            content: [
+              '西丽高尔夫乡村俱乐部成立于1995年，坐落于风光旖旎的深圳南山区，由享誉全球的建筑师 Nelson, Wright and Haworth精心打造，36洞的国际锦标赛标准球场依自然地势而建，球场风景秀丽宜人且不失挑战性，或许西丽并不是您打过的最难的球场，但是这里的四个特色九洞球场的自然风光和挑战定会让您流连忘返，无论是职业选手或是业余高尔夫爱好者都能在西丽感受美好的高尔夫体验。',
+              '在A场和D场，球洞之间的海拔落差能将深圳的城市风貌尽收眼底。A场5号洞是一个别致的三杆洞，果岭被棕榈树和沙坑包围着，开球就要面临一杆过水的考验，选对杆非常重要。D场的7号洞，大概是西丽球场最让人心旷神怡的洞了，从这个发球台望下去，风景壮阔，每一眼都让人欣喜。',
+              'B场和C场则相对幽静隐蔽，挥杆间，只见那满目嵯峨黛绿与辽阔天空，恰好构成一幅雅趣盎然的画面。B场的1号洞，是一个极富挑战性的左狗腿洞，球道右侧被诸多沙坑重重把守，因而第一记开球很是关键。C场的3号洞，从梯台一眼望去，广阔幽长，别有一番韵味，它不算是个很长的5杆洞，但仍具挑战性。',
+              '西丽不但致力于为其会员提供独一无二的高球体验，更是不遗余力支持中高协发展青少年高尔夫运动，为培养中国青少年高尔夫球星提供可持续发展的竞赛平台。西丽高尔夫乡村俱乐部很荣幸地将在今年七月第三次举办中高协青少年高尔夫比赛，很高兴看到青少年一代球员愈发热爱高尔夫这项运动。'
+            ]
+          },
+          {
+            id: 3,
+            logo: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_3.png',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_3_1.png',
+            name: '通盈·雁栖湖高尔夫球俱乐部',
+            content: [
+              '通盈·雁栖湖高尔夫俱乐部位于北京市怀柔区怀北镇，18洞半山地锦标赛球场是由欧洲超级巨星Ian Woosnam签名设计，IMG设计总监Brit Stenson、亚洲设计总创Steve Shepherdson亲自操刀，具有得天独厚的山水自然条件，在此基础上设计建造了北京少有的山地高尔夫球场。18洞球道总长6535米， 85个沙坑， 15万平米的水域。',
+              '俱乐部于2011年正式开放，球场及各配套设施占地面积达17000平米。球场设计妙趣横生极富挑战，山地与平原次第更迭延绵不绝，果岭大、速度快、变线复杂，品质与特质并行，傲然跻身国际锦标赛级高尔夫球场之列。'
+            ]
+          },
+          {
+            id: 4,
+            logo: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_4.png',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_4_1.png',
+            name: '金沙湖国际高尔夫球会',
+            content: [
+              '河南省第一家18洞国际锦标赛级都市球场——金沙湖国际高尔夫球会，因拥有水域面积达15万平方米的金沙湖而得名。 ',
+              '球场占地1200亩，现拥有18洞72杆的国际标准锦标赛级高尔夫球场和五星级会所。球道总长7230码，傍湖天成，大气磅礴，变幻的果岭时常让高球爱好者爱恨交加。得天独厚的地理环境、专业的运营管理团队，使球会被高尔夫专业媒体评选为“河南地标球场”。',
+              '如今的金沙湖球会在各方面均达到国内先进水平，是当之无愧的中原一流球场，更是郑州高端商务交流的重要场所和城市名片。金沙湖球会正向着“中国一流球会”的目标而奋进。',
+              '&nbsp;',
+              '&nbsp;',
+              '球会地址：河南省郑州市经济技术开发区第八大街1号',
+              '球会订场电话：0371-60175566'
+            ]
+          },
+          {
+            id: 5,
+            logo: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_5.png',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_5_1.png',
+            name: '鉴湖高尔夫球会',
+            content: [
+              '鉴湖高尔夫球会位于绍兴柯岩风景区的鉴湖南侧，上海—杭州—宁波经济发达三角区域的中心，与沪杭甬高速公路相接，104国道及南复线横亘南北两侧，交通十分便利。距离绍兴10分钟车程，杭州萧山国际机场25分钟车程，距杭州市50分钟车程。相邻的柯桥拥有全世界最大的纺织品市场。周围人文景观丰富，历代名人荟萃，素有“丝绸之府”、“文化之都”、“名士之乡”的美誉。',
+              '球道全长7435码，标准杆72杆，十八洞国际锦标级景观型球场。由美国JMP高尔夫设计公司Mark E稨ollinger先生设计。球场依山傍湖，水天一色，独具匠心的球场设计，在每每的细节中，体味到畅快挥杆的乐趣无穷。岛果岭、组团沙坑，尤其最后沿鉴湖四洞，远景、近景、处处绝境；长洞、短洞、洞洞艰险，最后一刻才能方显英雄本色！',
+              '球会有全长350码的双向对打的灯光练习场，驻场职业教练、推杆及切杆练习果岭一应俱全。宽敞舒适的会员专用真草打区, 30个半封闭打席。',
+              '球会会所位于球场中心的扇墩山顶，四周为大小湖南山、群山、型塘江、鉴湖所围绕。置身于风雅尊贵的会所中，眺远山，满目青翠；观鉴湖，烟波浩淼；想人文，历史悠悠！再加上鉴湖八景、古纤道、八字桥，书法家王羲之、鉴湖女侠秋瑾和横眉冷对千夫指的鲁迅也都给这块土地平添了许多独特的人文景观。',
+              '&nbsp;',
+              '&nbsp;',
+              '浙江绍兴鉴湖高尔夫俱乐部',
+              '地址：浙江省绍兴市柯岩风景区高尔夫大道1号',
+              '球会电话：0575 - 84366999',
+              '预约：0575-84380558'
+            ]
+          },
+          {
+            id: 6,
+            logo: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_6.png',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_6_1.png',
+            name: '广州风神高尔夫球会',
+            content: [
+              '广州风神高尔夫球会座落于花都（国际）汽车城,地理位置优越，距广州CBD仅40分钟车程，30分钟可抵白云国际机场，15分钟即达武广高铁线的广州北站，与广清高速新华出口相距5公里。',
+              '哈沃斯球场是一座山地风格、思考型的国际级锦标赛事球场。球场造工精致、细腻。果岭呈薯片型设计，变幻莫测，极富娱乐性和挑战性。',
+              '戴伊球场贯彻戴伊设计特有的“以果岭定球道”的风格，让每一杆都充满乐趣，而沙坑障碍玲珑精致、暗藏杀机，是一个充满奇趣的都市山地风格的精致球场。',
+              '&nbsp;',
+              '&nbsp;',
+              '球会地址：广州市花都区汽车城风神大道转岭东路39号',
+              '电话：（8620）8968 3888'
+            ]
+          },
+          {
+            id: 7,
+            logo: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_7.png',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_7_1.png',
+            name: '上海林克司乡村俱乐部',
+            content: [
+              '上海林克司乡村俱乐部，坐拥一个18洞锦标赛级高尔夫球场，由杰克尼克劳斯签名设计并按照USGA标准于1999年建造完成，纯粹林克斯风格。其毗邻浦东国际机场距市区仅40分车程。球场占地1000亩，球道全长7121码，标准杆72杆，难度系数132，坡度系数75.2。',
+              '球场的设计充分体现林克斯地貌特征，将可打性、挑战性和景观愉悦完美结合，是一个难以复制的策略型球场。地处东海之滨的独特地理位置，使之常年尽享海风的眷顾；本特草覆盖的果岭滑顺而理性、海滨雀稗蔓延的球道犹如地毯般舒适、高羊茅草的景观障碍区又平添不确定性。这也是可以给每一位打球者留下愉悦回忆的地方。',
+              '球场自开业以来获得美誉众多。2006年至今连续荣获知名权威杂志<<高尔夫大师>>、<<高尔夫>>等评选出的“中国十佳球场”、“中国十佳俱乐部”、“全国最佳球场质量”、“全国最佳球场设计”、“最佳林克斯”等殊荣。',
+              '&nbsp;',
+              '&nbsp;',
+              '地址：上海市浦东新区凌白路1600号',
+              '电话：021-58381234'
+            ]
+          },
+          {
+            id: 8,
+            logo: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_8.png',
+            imageUrl: 'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_ball/menu_4_3_8_1.png',
+            name: '莫干山观云高尔夫球会',
+            content: [
+              '莫干山观云高尔夫球会坐落于享有“江南第一山”美誉的著名旅游休闲避暑胜地——莫干山风景区山麓，位于沪杭甬三角区域的中心，紧依德清县城，与杭宁高速相接，距离湖州40分钟车程、杭州市区30分钟车程、萧山国际机场50分钟车程，104国道、09省道横亘两侧，交通便捷。',
+              '观云高尔夫球场为18洞国际锦标赛级球场，占地1300亩。球场由美国著名球场设计师Rick Jacobson设计，全长7208码，标准杆72杆。球道设计、景观打造充分利用基地的地形、植被，结合当地的山石、溪流，秀丽中流露古朴，阳刚中溢出匠心，水景山色、天衣无缝，依山傍水、浑然天成，挥杆之际，您可尽情体验“赤橙黄绿青蓝紫”的色彩变换和“佛国莲印”的心灵洗礼。置身会所之中，眺远山、满目青翠，观瀑布、气势恢宏，想人文、历史悠远，让您挥杆之余，散尽所有的疲乏，享受尊贵的体验。'
+            ]
+          }
+        ]
+      }
+
+      // 通过URL上的ID获取到数据
+      let nowActiveData = (function (id) {
+        id = parseInt(id)
+        for (let i = 0; i < initData.dataList.length; i++) {
+          if (initData.dataList[i].id === id) {
+            return initData.dataList[i];
+            break;
+          }
+        }
+      })(getQueryString('id') ? getQueryString('id') : 1)
+      $('#handerTitle').text(nowActiveData.name)
+      let listSubDom = ''
+      let createListSubDom = function(data) {
+        let templateP = ''
+        for (let i = 0; i < data.content.length; i++) {
+          templateP += `<p>${data.content[i]}</p>`
+        }
+        return `<img class="bg" onClick="javascript:return false" src="${data.imageUrl}">
+                <img class="logo" onClick="javascript:return false" src="${data.logo}">
+                ${templateP}`
+      }
+			// 渲染DOM
+			$('#content').append(createListSubDom(nowActiveData))
+    })
+	</script>
+</body>
+
+</html>

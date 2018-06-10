@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,maximum-scale=1, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" type="text/css" href="../lib/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<title></title>
+</head>
+<style type="text/css">
+  .hander {
+    margin-bottom: .8rem;
+  }
+  .content {
+    width: 66%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .content img{
+    width: 100%;
+    margin-bottom: .533333rem;
+    display: block;
+  }
+  .content #name{
+    position: absolute;
+    top: 0;
+    left: -1.386667rem;
+    font-size: .373333rem;
+    color: #B03721;
+  }
+  .match_details {
+    width: 80%;
+    margin: 1.013333rem auto 1.013333rem;
+  }
+  .match_details>h1 {
+    color: #B03721;
+    text-align: center;
+    font-size: .48rem;
+    line-height: .88rem;
+  }
+  .match_item {
+    margin-top: .853333rem;
+  }
+  .match_item .hand {
+    height: 1.066667rem;
+    position: relative;
+  }
+  .border-red-skewX {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: skewX(-22deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .border-red-skewX::after {
+    content: '';
+    position: absolute;
+    border: solid .026667rem #B03721;
+    left: -.24rem;
+    right: -.24rem;
+    bottom: .106667rem;
+    top: -.133333rem;
+  }
+  .border-red-skewX>i {
+    position: absolute;
+    width: 100%;
+    border: .013333rem solid #FFF;
+    bottom: .106667rem;
+    z-index: 1;
+  }
+  .border-red-skewX>p {
+    flex: 1;
+    background-color: #85C7ED;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+  }
+  .woman .border-red-skewX>p {
+    background-color: #EA8B88;
+  }
+  .border-red-skewX>p:nth-child(1) {
+    background: #AB3620!important;
+  }
+  .border-red-skewX>p+p {
+    border-left: .026667rem solid #FFF;
+  }
+  .match_title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .4rem;
+    height: 100%;
+  }
+  .match_title>p {
+    flex: 1;
+    text-align: center;
+    color: #FFF;
+  }
+  .main {
+    margin-left: -.213333rem;
+    margin-right: .213333rem;
+    margin-top: .026667rem;
+  }
+  .main>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .373333rem;
+  }
+  .main>div>p {
+    flex: 1;
+    text-align: center;
+    line-height: .88rem;
+    background-color: #E0E1E2;
+    padding: 0 .08rem;
+    text-align-last: justify;
+    box-sizing: border-box;
+  }
+  .main>div>p+p {
+    border-left: .026667rem solid #FFF;
+    border-top: .026667rem solid #FFF;
+  }
+  .main>div:nth-child(even)>p {
+    background-color: #F5BCBB;
+  }
+  em.two_word {
+    max-width: 83%;
+    display: block;
+    margin: auto;
+  }
+</style>
+<body>
+	<div class="container">
+    <div class="hander left_top_logo">
+      <img src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_left-top-logo.png" onClick="javascript:return false">
+      <p id="handerTitle"></p>
+    </div>
+    <!-- 图片信息 -->
+    <div class="content" id="content">
+      <p id="name" class="name"></p>
+        <!-- 图片DOM -->
+    </div>
+    <div class="match_details" id="matchDetails">
+        <h1>2017汇丰全国青少年高尔夫冠军赛</h1>
+        <h1 class="name"></h1>
+        <!-- 赛事排名信息 match_details -->
+        <!-- 斜切的红边 border-red-skewX -->
+        <!-- 比赛排名DOM -->
+      </div>
+
+  </div>
+	<script src="../lib/js/jquery.min.js"></script>
+	<script src="../lib/js/lib-flexible.js"></script>
+  <script src="../js/common.js"></script>
+	<script type="text/javascript">
+		$().ready(function () {
+			document.title = '汇丰青少年' // set web title
+      $('#handerTitle').text('2017赛季回顾') // getQueryString('title')
+      const initData = {
+        dataList: [
+          {
+            id: 1,
+            url: './menu_4_1_details.html',
+            title: '公开赛',
+            sharaData: {
+              title: '分享的标题',
+              description: '分享的描述',
+              imageUrl: '分享的图片',
+              linkUrl: '分享的地址'
+            },
+            imageList: [
+              'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_1.png',
+              'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_1_2.png'
+            ],
+            matchRanking: [
+              {
+                title: '男子组',
+                className: 'man',
+                list: [
+                  ['梁恩旗', '张羽泽', '张宗浩', '陈达飞', '周彦含'],
+                  ['黄嘉培', '付烨恺', '匡洋', '张博弈', '祝赫'],
+                  ['林嘉濠', '吴翰恩', '余祺林', '黄骏琦', '童冠鸣']
+                ]
+              },
+              {
+                title: '女子组',
+                className: 'woman',
+                list: [
+                  ['郭婉仪', '陈钰琳', '殷小雯', '李嘉赢', '邓皓月'],
+                  ['刘依一', '吕田', '章蕴萱', '曾莉棋', '王鑫瑜'],
+                  ['曾彩晴', '潘洁红', '龚昶文', '郝文玥', '刘宇捷']
+                ]
+              }
+            ]
+          },
+          {
+            id: 2,
+            url: './menu_4_1_details.html',
+            title: '广州站',
+            sharaData: {
+              title: '分享的标题',
+              description: '分享的描述',
+              imageUrl: '分享的图片',
+              linkUrl: '分享的地址'
+            },
+            imageList: [
+              'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_2.png',
+              'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_2_2.png'
+            ],
+            matchRanking: [
+              {
+                title: '男子组',
+                className: 'man',
+                list: [
+                  ['梁恩旗', '张羽泽', '张宗浩', '陈达飞', '周彦含'],
+                  ['黄嘉培', '付烨恺', '匡洋', '张博弈', '祝赫'],
+                  ['林嘉濠', '吴翰恩', '余祺林', '黄骏琦', '童冠鸣']
+                ]
+              },
+              {
+                title: '女子组',
+                className: 'woman',
+                list: [
+                  ['郭婉仪', '陈钰琳', '殷小雯', '李嘉赢', '邓皓月'],
+                  ['刘依一', '吕田', '章蕴萱', '曾莉棋', '王鑫瑜'],
+                  ['曾彩晴', '潘洁红', '龚昶文', '郝文玥', '刘宇捷']
+                ]
+              }
+            ]
+          },
+          {
+            id: 3,
+            url: './menu_4_1_details.html',
+            title: '郑州站',
+            sharaData: {
+              title: '分享的标题',
+              description: '分享的描述',
+              imageUrl: '分享的图片',
+              linkUrl: '分享的地址'
+            },
+            imageList: [
+              'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_3.png',
+              'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_3_2.png'
+            ],
+            matchRanking: [
+              {
+                title: '男子组',
+                className: 'man',
+                list: [
+                  ['梁恩旗', '张羽泽', '张宗浩', '陈达飞', '周彦含'],
+                  ['黄嘉培', '付烨恺', '匡洋', '张博弈', '祝赫'],
+                  ['林嘉濠', '吴翰恩', '余祺林', '黄骏琦', '童冠鸣']
+                ]
+              },
+              {
+                title: '女子组',
+                className: 'woman',
+                list: [
+                  ['郭婉仪', '陈钰琳', '殷小雯', '李嘉赢', '邓皓月'],
+                  ['刘依一', '吕田', '章蕴萱', '曾莉棋', '王鑫瑜'],
+                  ['曾彩晴', '潘洁红', '龚昶文', '郝文玥', '刘宇捷']
+                ]
+              }
+            ]
+          },
+          {
+            id: 4,
+            url: './menu_4_1_details.html',
+            title: '杭州站',
+            sharaData: {
+              title: '分享的标题',
+              description: '分享的描述',
+              imageUrl: '分享的图片',
+              linkUrl: '分享的地址'
+            },
+            imageList: [
+              'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_4.png',
+              'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_4_2.png'
+            ],
+            matchRanking: [
+              {
+                title: '男子组',
+                className: 'man',
+                list: [
+                  ['梁恩旗', '张羽泽', '张宗浩', '陈达飞', '周彦含'],
+                  ['黄嘉培', '付烨恺', '匡洋', '张博弈', '祝赫'],
+                  ['林嘉濠', '吴翰恩', '余祺林', '黄骏琦', '童冠鸣']
+                ]
+              },
+              {
+                title: '女子组',
+                className: 'woman',
+                list: [
+                  ['郭婉仪', '陈钰琳', '殷小雯', '李嘉赢', '邓皓月'],
+                  ['刘依一', '吕田', '章蕴萱', '曾莉棋', '王鑫瑜'],
+                  ['曾彩晴', '潘洁红', '龚昶文', '郝文玥', '刘宇捷']
+                ]
+              }
+            ]
+          },
+          {
+            id: 5,
+            url: './menu_4_1_details.html',
+            title: '北京站',
+            sharaData: {
+              title: '分享的标题',
+              description: '分享的描述',
+              imageUrl: '分享的图片',
+              linkUrl: '分享的地址'
+            },
+            imageList: [
+              'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_5.png',
+              'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_5_2.png'
+            ],
+            matchRanking: [
+              {
+                title: '男子组',
+                className: 'man',
+                list: [
+                  ['梁恩旗', '张羽泽', '张宗浩', '陈达飞', '周彦含'],
+                  ['黄嘉培', '付烨恺', '匡洋', '张博弈', '祝赫'],
+                  ['林嘉濠', '吴翰恩', '余祺林', '黄骏琦', '童冠鸣']
+                ]
+              },
+              {
+                title: '女子组',
+                className: 'woman',
+                list: [
+                  ['郭婉仪', '陈钰琳', '殷小雯', '李嘉赢', '邓皓月'],
+                  ['刘依一', '吕田', '章蕴萱', '曾莉棋', '王鑫瑜'],
+                  ['曾彩晴', '潘洁红', '龚昶文', '郝文玥', '刘宇捷']
+                ]
+              }
+            ]
+          },
+          {
+            id: 6,
+            url: './menu_4_1_details.html',
+            title: '深圳站',
+            sharaData: {
+              title: '分享的标题',
+              description: '分享的描述',
+              imageUrl: '分享的图片',
+              linkUrl: '分享的地址'
+            },
+            imageList: [
+              'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_6.png',
+              'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_6_2.png'
+            ],
+            matchRanking: [
+              {
+                title: '男子组',
+                className: 'man',
+                list: [
+                  ['梁恩旗', '张羽泽', '张宗浩', '陈达飞', '周彦含'],
+                  ['黄嘉培', '付烨恺', '匡洋', '张博弈', '祝赫'],
+                  ['林嘉濠', '吴翰恩', '余祺林', '黄骏琦', '童冠鸣']
+                ]
+              },
+              {
+                title: '女子组',
+                className: 'woman',
+                list: [
+                  ['郭婉仪', '陈钰琳', '殷小雯', '李嘉赢', '邓皓月'],
+                  ['刘依一', '吕田', '章蕴萱', '曾莉棋', '王鑫瑜'],
+                  ['曾彩晴', '潘洁红', '龚昶文', '郝文玥', '刘宇捷']
+                ]
+              }
+            ]
+          },
+          {
+            id: 7,
+            url: './menu_4_1_details.html',
+            title: '绍兴站',
+            sharaData: {
+              title: '分享的标题',
+              description: '分享的描述',
+              imageUrl: '分享的图片',
+              linkUrl: '分享的地址'
+            },
+            imageList: [
+              'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_7.png',
+              'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_7_2.png'
+            ],
+            matchRanking: [
+              {
+                title: '男子组',
+                className: 'man',
+                list: [
+                  ['梁恩旗', '张羽泽', '张宗浩', '陈达飞', '周彦含'],
+                  ['黄嘉培', '付烨恺', '匡洋', '张博弈', '祝赫'],
+                  ['林嘉濠', '吴翰恩', '余祺林', '黄骏琦', '童冠鸣']
+                ]
+              },
+              {
+                title: '女子组',
+                className: 'woman',
+                list: [
+                  ['郭婉仪', '陈钰琳', '殷小雯', '李嘉赢', '邓皓月'],
+                  ['刘依一', '吕田', '章蕴萱', '曾莉棋', '王鑫瑜'],
+                  ['曾彩晴', '潘洁红', '龚昶文', '郝文玥', '刘宇捷']
+                ]
+              }
+            ]
+          },
+          {
+            id: 8,
+            url: './menu_4_1_details.html',
+            title: '总决赛',
+            sharaData: {
+              title: '分享的标题',
+              description: '分享的描述',
+              imageUrl: '分享的图片',
+              linkUrl: '分享的地址'
+            },
+            imageList: [
+              'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_8.png',
+              'https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_match/menu_4_1_8_2.png'
+            ],
+            matchRanking: [
+              {
+                title: '男子组',
+                className: 'man',
+                list: [
+                  ['梁恩旗', '张羽泽', '张宗浩', '陈达飞', '周彦含'],
+                  ['黄嘉培', '付烨恺', '匡洋', '张博弈', '祝赫'],
+                  ['林嘉濠', '吴翰恩', '余祺林', '黄骏琦', '童冠鸣']
+                ]
+              },
+              {
+                title: '女子组',
+                className: 'woman',
+                list: [
+                  ['郭婉仪', '陈钰琳', '殷小雯', '李嘉赢', '邓皓月'],
+                  ['刘依一', '吕田', '章蕴萱', '曾莉棋', '王鑫瑜'],
+                  ['曾彩晴', '潘洁红', '龚昶文', '郝文玥', '刘宇捷']
+                ]
+              }
+            ]
+          }
+        ]
+      }
+      // 通过URL上的ID获取到数据
+      let nowActiveData = (function (id) {
+        id = parseInt(id)
+        for (let i = 0; i < initData.dataList.length; i++) {
+          if (initData.dataList[i].id === id) {
+            return initData.dataList[i];
+            break;
+          }
+        }
+      })(getQueryString('id') ? getQueryString('id') : 1)
+
+      /* ---添加图片DOM 操作--- */
+      var anonymous = (function (data) {
+        // 设置小标题
+        $('.name').text(data.title)
+        let listSubDom = ''
+        let createListSubDom = function(url) {
+          return `<img onClick="javascript:return false" src="${url}"></img>`
+        }
+        // 循环添加DOM
+        for (let i = 0; i < data.imageList.length; i++) {
+          listSubDom += createListSubDom(data.imageList[i])
+        }
+        // 渲染图片DOM
+        $('#content').append(listSubDom)
+      })(nowActiveData)
+
+      /* ---添加比赛成绩DOM 操作--- */
+      var anonymous = (function (data) {
+        const number123String = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十'] // 定义中文给 第*名 用
+        let listSubDom = ''
+        let createListSubDom = function(name) {
+          const className = name.length === 2 ? 'two_word' : ''
+          return `<p><em class="${className}">${name}</em></p>`
+        }
+        /*
+        * @params data.index 索引值
+        * @params data.list 人物列表
+        */
+        let createListDom = function(data) {
+          let listSubDomString = ''
+          for (let i = 0; i < data.list.length; i++) {
+            listSubDomString += createListSubDom(data.list[i])
+          }
+          return `<div>
+                    <p>第${number123String[data.index]}名</p>
+                    ${listSubDomString}
+                  </div>`
+        }
+        /*
+        * @params data.index 索引值
+        * @params data.list 人物列表
+        * @description 把上面生成的东西插入到父DOM （男子组、女子组）
+        */
+        let insertToParentDom = function (data) {
+        return `<div class="match_item ${data.className}">
+            <div class="hand">
+              <div class="border-red-skewX">
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <i></i>
+              </div>
+              <div class="match_title">
+                <p>${data.title}</p>
+                <p>A组</p>
+                <p>B组</p>
+                <p>C组</p>
+                <p>D组</p>
+                <p>E组</p>
+              </div>
+            </div>
+            <div class="main">
+              ${data.listSubDom}
+            </div>
+          </div>`
+        }
+        // 分出有哪几个组  （男组、女组.....）
+        for (let x = 0; x < data.length; x++) {
+          // 各组有多少名次 第一名 2 3 名
+          for (let i = 0; i < data[x]['list'].length; i++) {
+            listSubDom += createListDom({list: data[x]['list'][i], index: i})
+          }
+          $('#matchDetails').append(insertToParentDom({listSubDom, title: data[x]['title'], className: data[x]['className']}))
+          listSubDom = ''
+        }
+        // 渲染图片DOM
+      })(nowActiveData.matchRanking)
+
+      /* 微信分享 */
+      console.log(`微信分享的信息(${nowActiveData.title})：` , nowActiveData.sharaData)
+		})
+	</script>
+</body>
+
+</html>

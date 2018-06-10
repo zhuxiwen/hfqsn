@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,maximum-scale=1, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" type="text/css" href="../lib/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<title></title>
+</head>
+<style type="text/css">
+	.content {
+    margin: 0 .133333rem .533333rem .133333rem;
+    padding: .133333rem;
+  }
+  .skewXTitle {
+    margin-left: .293333rem;
+    width: 2.426667rem;
+    height: 1.36rem;
+    background-color: #93331D;
+    transform: skewX(-18deg);
+    text-align: center;
+    display: inline-block;
+    align-items: center;
+    line-height: 1.24;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .skewXTitle>em{
+    transform: skewX(18deg);
+    color: #FFF;
+    font-size: .453333rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 50%;
+  }
+  .skewXTitle.em_style {
+    float: right;
+    margin-right: .266667rem;
+    margin-top: .133333rem;
+  }
+  .skewXTitle.em_style>em{
+    height: 100%;
+    margin-left: -.24rem;
+    width: 140%;
+  }
+</style>
+<body>
+	<div class="container">
+    <div class="hander left_top_logo">
+      <img src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_left-top-logo.png" onClick="javascript:return false">
+      <p id="handerTitle"></p>
+    </div>
+    <div class="content border_dashed_dddd">
+      <div class="txt">
+          <p><span class="skewXTitle" style="float: left;"><em>城市</em><em>训练营</em></span>中高协-汇丰中国青少年高尔夫发展计划————梅塞德斯-奔驰城市训练营由汇丰全国青少年高尔夫夏令营升级而来，2018年共设有广州，郑州，杭州，成都四站，面向8-12岁青少年进行高尔夫普及课程。城市训练营特别邀请来自泰勒梅卓越馆的专业教练，并将以前为期一天的夏令营延长至两天，从多个纬度寓教于乐。</p>
+          <p>为了不影响孩子们的正常学习，训练营特意安排在周末两天进行，意在丰富孩子们的课外生活。此外，礼仪也将会是城市训练营评比的重要指标之一。</p>    
+      </div>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+    <div class="content border_dashed_dddd">
+      <div class="txt">
+          <p><span class="skewXTitle em_style"><em class="em_style">校园计划</em></span>汇丰全国青少年高尔夫校园计划是”中国高尔夫球协会汇丰中国青少年高尔夫发展计划”的一部分，旨在通过在中小学校开展高尔夫球课程，让更多的孩子在校园里、课内外了解和学习高尔夫知识。校园推广计划通过培训体育教师，发展高球教学师资队伍，对中小学校开设高尔夫球课程以及开展课余活动给与支持和帮助等一系列举措， 使众多中小学校成功地开设了 高尔夫球课，孩子们在体育课上快乐地享受和体验高球运动的魅力。</p>
+      </div>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+  </div>
+	<script src="../lib/js/jquery.min.js"></script>
+  <script src="../lib/js/lib-flexible.js"></script>
+  <script src="../js/common.js"></script>
+	<script type="text/javascript">
+		$().ready(function () {
+			document.title = '汇丰青少年' // set web title
+      $('#handerTitle').text(getQueryString('title')) // getQueryString('title')
+		})
+	</script>
+</body>
+
+</html>

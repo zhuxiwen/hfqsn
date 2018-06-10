@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,maximum-scale=1, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" type="text/css" href="../lib/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<title></title>
+</head>
+<style type="text/css">
+	.content {
+    margin: 0 .133333rem .533333rem .133333rem;
+    padding: .8rem .133333rem;
+  }
+  .circle_box {
+    margin: .773333rem 0 .853333rem;
+  }
+  .circle_box>div {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+    margin: 0 auto;
+    margin-bottom: .373333rem;
+  }
+  .double_circle {
+    height: 1.6rem;
+    width: 1.6rem;
+  }
+  .double_circle>p{
+    z-index: 1;
+    font-size: .346667rem;
+    letter-spacing: .08rem;
+  }
+</style>
+<body>
+	<div class="container">
+    <div class="hander left_top_logo">
+      <img src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_left-top-logo.png" onClick="javascript:return false">
+      <p id="handerTitle"></p>
+    </div>
+    <div class="circle_box">
+      <div>
+        <div class="double_circle"><p>诚信</p></div>
+        <div class="double_circle"><p>自律</p></div>
+      </div>
+      <div>
+        <div class="double_circle"><p>包容</p></div>
+        <div class="double_circle"><p>进取</p></div>
+      </div>
+    </div>
+    <div class="content border_dashed_dddd">
+      <div class="txt">
+          <p>与许多其他运动项目不同，高尔夫球运动大多是在没有裁判员监督的情况下进行的。这项运动主要依靠每个参与者的诚实和守信，自觉遵守规则，主动为其他球员着想。不论对抗有多么激烈，所有球员都应当自觉约束自己的行为，在任何时候都表现出礼貌谦让和良好的运动精神。这是高尔夫球运动的精髓所在。</p>
+      </div>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+  </div>
+	<script src="../lib/js/jquery.min.js"></script>
+  <script src="../lib/js/lib-flexible.js"></script>
+  <script src="../js/common.js"></script>
+	<script type="text/javascript">
+		$().ready(function () {
+			document.title = '汇丰青少年' // set web title
+      $('#handerTitle').text('运动精神') // getQueryString('title')
+		})
+	</script>
+</body>
+
+</html>

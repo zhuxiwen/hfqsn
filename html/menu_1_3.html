@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,maximum-scale=1, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" type="text/css" href="../lib/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<title></title>
+</head>
+<style type="text/css">
+  .content {
+    display: flex;
+    width: 98%;
+    margin-left: 1%;
+    min-height: 70vh;
+    align-items: center;
+  }
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    text-align: center;
+  }
+  table tr{
+    font-size: .266667rem;
+    line-height: .48rem;
+    background-color: #FFF;
+  }
+  table tr.th th{
+    font-size: .293333rem;
+    line-height: .533333rem;
+  }
+  table tr.th th{
+    border-top: .026667rem solid #AB463B;
+  }
+  table tr th, table tr td {
+      border-right: .026667rem solid #AB463B;
+      border-bottom: .026667rem solid #AB463B;
+  }
+  table tr th:first-child, table tr td:first-child {
+      border-left: .026667rem solid #AB463B;
+  }
+  table tr th {
+      background: #EBB9B8;
+  }
+  table tr:first-child th:first-child {
+      border-top-left-radius: .213333rem;
+  }
+  table tr:first-child th:last-child {
+      border-top-right-radius: .213333rem;
+  }
+  table tr:last-child td:first-child {
+      border-bottom-left-radius: .213333rem;
+  }
+  table tr:last-child td:last-child {
+      border-bottom-right-radius: .213333rem;
+  }
+  .th_title {
+    text-align: left;
+    text-indent: .186667rem;
+  }
+</style>
+<body>
+	<div class="container">
+    <div class="hander left_top_logo">
+      <img src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_left-top-logo.png" onClick="javascript:return false">
+      <p id="handerTitle"></p>
+    </div>
+    <div class="content">
+      <table id="tableList">
+      </table>
+    </div>
+  </div>
+	<script src="../lib/js/jquery.min.js"></script>
+  <script src="../lib/js/lib-flexible.js"></script>
+  <script src="../js/common.js"></script>
+	<script type="text/javascript">
+		$().ready(function () {
+			document.title = '汇丰青少年' // set web title
+      $('#handerTitle').text(getQueryString('title')) // getQueryString('title')
+      let tableListSubDom = `
+          <tr class="th">
+            <th>事件名称（全称）</th>
+            <th width="16%">比赛地点</th>
+            <th width="22%">日期</th>
+          </tr>`
+      const initData = {
+        list: [
+          {
+            title: '汇丰中国青少年高尔夫球公开赛',
+            address: '广州',
+            date: '1月30-2月2日'
+          },
+          {
+            title: '汇丰全国青少年高尔夫冠军赛第一站',
+            address: '珠海',
+            date: '3月22-24日'
+          },
+          {
+            title: '汇丰全国青少年高尔夫冠军赛第二站',
+            address: '郑州',
+            date: '4月19-21日'
+          },
+          {
+            title: '汇丰全国青少年高尔夫冠军赛第三站',
+            address: '杭州',
+            date: '5月23-26日'
+          },
+          {
+            title: '汇丰全国青少年高尔夫冠军赛第四站（比洞赛）',
+            address: '绍兴',
+            date: '6月6-9日'
+          },
+          {
+            title: '汇丰全国青少年高尔夫冠军赛第五站',
+            address: '北京',
+            date: '7月18-20日'
+          },
+          {
+            title: '汇丰全国青少年高尔夫冠军赛第六站',
+            address: '深圳',
+            date: '8月15-17日'
+          },
+          {
+            title: '汇丰全国青少年高尔夫冠军赛总决赛',
+            address: '上海',
+            date: '9月12-15日'
+          },
+          {
+            title: '汇丰中国青少年高尔夫队际锦标赛',
+            address: '待定',
+            date: '12月5-8日'
+          }
+        ]
+      }
+      for (let i = 0; i < initData.list.length; i++) {
+        tableListSubDom += `
+          <tr class="th">
+            <td class="th_title">${initData.list[i]['title']}</td>
+            <td>${initData.list[i]['address']}</td>
+            <td>${initData.list[i]['date']}</th>
+          </tr>`
+      }
+      $('#tableList').html(tableListSubDom)
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,maximum-scale=1, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" type="text/css" href="../lib/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<title></title>
+</head>
+<style type="text/css">
+  .hander {
+    margin-bottom: .8rem;
+  }
+  .logo_content {
+    width: 92%;
+    margin: 0 auto;
+  }
+	.logo_content>div {
+    display: flex;
+    align-items: baseline;
+    text-align: center;
+    justify-content: space-around;
+    margin-bottom: 1.093333rem;
+  }
+  .logo_content>div>div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo_content>div>div img {
+    width: 46%;
+    display: block;
+  }
+  .logo_content>div>div h1 {
+    font-size: .293333rem;
+    line-height: .693333rem;
+  }
+  .logo_content>div>div p {
+    font-size: .293333rem;
+  }
+  #fontStyle h1{
+    font-size: .346667rem;
+    line-height: .746667rem;
+  }
+  #fontStyle p{
+    font-size: .32rem;
+  }
+</style>
+<body>
+	<div class="container">
+    <div class="hander left_top_logo">
+      <img src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_left-top-logo.png" onClick="javascript:return false">
+      <p id="handerTitle"></p>
+    </div>
+    <!-- 我这里也想遍历出来的，可是给的图片大小不一，及多处不同，还是用最土的方式吧 -->
+    <div class="logo_content">
+      <div id="fontStyle">
+        <div>
+            <img onClick="javascript:return false" src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_3_1_1.png">
+            <h1>中国高尔夫球协会</h1>
+            <p>China Golf Association</p>
+        </div>
+        <div>
+          <img onClick="javascript:return false" src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_3_1_2.png" style="width: 60%">
+          <h1>汇丰银行（中国）有限公司</h1>
+          <p>HSBC Bank (China) Company</p>
+        </div>
+      </div>
+      <div>
+        <div>
+            <img onClick="javascript:return false" src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_3_1_3.png">
+            <h1>梅赛德斯&nbsp;-&nbsp;奔驰</h1>
+            <p>Mercedes - Benz</p>
+        </div>
+        <div>
+          <img onClick="javascript:return false" src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_3_1_4.png">
+          <h1>IMG学院</h1>
+          <p>IMG&nbsp;Academy</p>
+        </div>
+        <div>
+          <img onClick="javascript:return false" src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_3_1_5.png">
+          <h1>皇家古老高尔夫俱乐部</h1>
+          <p>R&A</p>
+        </div>
+      </div>
+      <div>
+        <div>
+            <img onClick="javascript:return false" style="width: 36%" src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_3_1_6.png">
+            <h1>5100西藏冰川矿泉水</h1>
+            <p>5100 Tibet Spring</p>
+        </div>
+        <div>
+          <img onClick="javascript:return false" style="width: 53%" src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_3_1_7.png">
+          <h1>梁文冲高尔夫俱乐部</h1>
+          <p>Wenchong Liang Golf Club</p>
+        </div>
+        <div>
+          <img onClick="javascript:return false" style="width: 53%" src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_3_1_8.png">
+          <h1>高联体育</h1>
+          <p>Gaolian Sports</p>
+        </div>
+      </div>
+      <div>
+        <div>
+            <img onClick="javascript:return false" src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_3_1_9.png">
+            <h1>WME | IMG</h1>
+            <p>WME | IMG</p>
+        </div>
+        <div>
+          <img onClick="javascript:return false" src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_menu_3_1_10.png">
+          <h1>泰勒梅卓越馆</h1>
+          <p>TaylorMade Performance Lab</p>
+        </div>
+      </div>
+    </div>
+  </div>
+	<script src="../lib/js/jquery.min.js"></script>
+	<script src="../lib/js/lib-flexible.js"></script>
+	<script type="text/javascript">
+		$().ready(function () {
+			document.title = '汇丰青少年' // set web title
+      $('#handerTitle').text('赞助商&合作伙伴') // getQueryString('title')
+
+		})
+	</script>
+</body>
+
+</html>
