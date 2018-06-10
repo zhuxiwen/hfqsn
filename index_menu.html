@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,maximum-scale=1, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" type="text/css" href="./lib/css/reset.css">
+	<title></title>
+</head>
+<style type="text/css">
+	/* 头部背景 */
+	.banner{
+		display: block;
+		width: 100%;
+	}
+	/* 主体 */
+	.content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 1.04rem 0;
+	}
+	/* 主菜单 */
+	ul.menu_list {
+		width: 62%;
+		margin-left: .346667rem;
+	}
+	li.menu_list_item {
+		position: relative;
+		margin-bottom: .56rem;
+	}
+	li.menu_list_item>a {
+		position: relative;
+    color: #FFF;
+    background-color: #DB3923;
+    text-decoration: none;
+    font-size: .4rem;
+    width: 100%;
+    display: block;
+    line-height: .693333rem;
+    transform: skewX(-22deg);
+    padding-bottom: .053333rem;
+	}
+	li.menu_list_item>a>em {
+		transform: skewX(22deg);
+    display: block;
+	}
+	li.menu_list_item>a>.menu_border {
+		position: absolute;
+    top: -.08rem;
+    left: -.08rem;
+    background-color: transparent;
+    border: solid .013333rem #DB3923;
+    height: 100%;
+    width: 100%;
+    border-bottom-color: #FFF;
+    border-right-color: #FFF;
+	}
+	/* 子菜单 */
+	ul.submenu_list {
+		display: none;
+    margin-left: -.133333rem;
+    margin-right: .133333rem;
+	}
+	ul.submenu_list a {
+    color: initial;
+    text-decoration: none;
+	}
+	ul.submenu_list>ol {
+    font-size: .346667rem;
+		line-height: .72rem;
+	}
+	ul.submenu_list>ol:nth-child(odd) {
+    background-color: #D7D7D7;
+	}
+	ul.submenu_list>ol:nth-child(even) {
+    background-color: #F7CFCE;
+	}
+</style>
+<body>
+	<div class="container">
+		<img class="banner" onClick="javascript:return false" src="https://dxjk.oss-cn-hangzhou.aliyuncs.com/hfsqh_banner.png">
+		<div class="content">
+			<ul class="menu_list" id="menuList">
+					<!-- <li class="menu_list_item">
+						<a href="javascript:;">
+							<i class="menu_border" href="javascript:;"></i>
+							<em>概述</em>
+						</a>
+						<ul class="submenu_list">
+								<ol class="">
+									发展计划概述1
+								</ol>
+						</ul>
+					</li> -->
+			</ul>
+		</div>
+	</div>
+	<script src="./lib/js/jquery.min.js"></script>
+	<script src="./lib/js/lib-flexible.js"></script>
+	<script type="text/javascript">
+		$().ready(function () {
+			let stronge = window.localStorage // 本地缓存
+			document.title = '汇丰青少年' // set web title
+			const initData = {
+				menu_list: [
+					{
+						title: '概述',
+						url: '',
+						submenu_list: [
+							{
+								title: '发展计划概述',
+								url: './html/menu_1_1.html'
+							},
+							{
+								title: '高尔夫球运动精神',
+								url: './html/menu_1_2.html'
+							},
+							{
+								title: '2018年赛程',
+								url: './html/menu_1_3.html'
+							},
+							{
+								title: '城市训练与校园计划',
+								url: './html/menu_1_4.html'
+							},
+							{
+								title: '汇丰冠军赛',
+								url: './html/menu_1_5.html'
+							},
+							{
+								title: 'IMG学院',
+								url: './html/menu_1_6.html'
+							},
+							{
+								title: '中国国家青少年高尔夫球队',
+								url: './html/menu_1_7.html'
+							},
+							{
+								title: '梁文冲高尔夫俱乐部',
+								url: './html/menu_1_8.html'
+							}
+						]
+					},
+					{
+						title: '寄语',
+						url: '',
+						submenu_list: [
+							{
+								title: '汇丰寄语',
+								url: './html/menu_2_1.html'
+							},
+							{
+								title: '中国高尔夫球协会寄语',
+								url: './html/menu_2_2.html'
+							},
+							{
+								title: '汇丰青少年校友寄语',
+								url: './html/menu_2_3.html'
+							},
+							{
+								title: '职业球员寄语',
+								url: './html/menu_2_4.html'
+							}
+						]
+					},
+					{
+						title: '赞助商与合作伙伴',
+						url: './html/menu_3_1.html',
+						submenu_list: []
+					},
+					{
+						title: '回顾2017',
+						url: '',
+						submenu_list: [
+							{
+								title: '2017赛季回顾',
+								url: './html/menu_4_1.html'
+							},
+							{
+								title: '2017年度评选获奖',
+								url: './html/menu_4_2.html'
+							},
+							{
+								title: '2017年球场介绍',
+								url: './html/menu_4_3.html'
+							}
+						]
+					},
+					{
+						title: '特别鸣谢',
+						url: './html/menu_5_1.html',
+						submenu_list: []
+					},
+					{
+						title: '官方网站',
+						url: 'http://www.golf.org.cn/youth',
+						submenu_list: []
+					},
+				]
+			}
+			let menuListDom = ''
+			// 创建子菜单
+			const createSubMenuListItem = function (data) {
+				return data.map(function(e) {
+					return `<ol onClick="javascript:location.href='${e.url + '?title=' + e.title}';" data-prop="1"><a data-prop="1" href='javascript:;'>${e.title}</a></ol>`
+				}).join('')
+			}			
+			// 创建菜单
+			const createMenuListItem = function (data) {
+				return `<li class="menu_list_item" data-index="${data.index}">
+						<a href="javascript:;" data-href="${data.list.url}">
+							<i class="menu_border" href="javascript:;"></i>
+							<em>${data.list.title}</em>
+						</a>
+						<ul class="submenu_list">
+							${createSubMenuListItem(data.list.submenu_list)}
+						</ul>
+					</li>`
+			}
+			for (let i = 0; i < initData.menu_list.length; i++) {
+				menuListDom += createMenuListItem({list: initData.menu_list[i], index: i})
+			}
+			// 渲染DOM
+			$('#menuList').html(menuListDom)
+			if(stronge.getItem('showMenuIndex')) {
+				$('.menu_list_item').eq(stronge.getItem('showMenuIndex')).children('ul').show()
+			}
+			// 点击切换菜单
+			$('#menuList>li.menu_list_item').click(function(e, index) {
+				$(this).siblings().children('ul').slideUp()
+				const _this = $(this)
+				if (_this.children('a').attr('data-href')) {
+					stronge.removeItem('showMenuIndex')
+					location.href = _this.children('a').attr('data-href')
+				} else {
+					if (e.target.attributes['data-prop'] && e.target.attributes['data-prop'].value === '1') {
+						return false
+					}
+					_this.children('ul').slideToggle(500, function() {
+						if (_this.children('ul').is(':visible')) {
+							stronge.setItem('showMenuIndex', _this.attr('data-index')) // getItem('showMenuIndex')
+						} else {
+							stronge.removeItem('showMenuIndex')
+						}
+					}) // 如果不要动画就 换成 .toggle()
+				}
+			})
+		})
+	</script>
+</body>
+
+</html>
